@@ -1,0 +1,42 @@
+{
+  "name": "cache-countdown",
+  "version": "0.1.0",
+  "description": "Counts down until this session's prompt cache goes cold, with an optional keep-warm ping for when you step away.",
+  "author": {
+    "name": "Ryan Minert"
+  },
+  "license": "MIT",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "ttlMinutes": {
+      "type": "number",
+      "title": "Cache lifetime (minutes)",
+      "description": "How long the prompt cache lives after a request. 60 normally; 5 when the session is in usage overage.",
+      "default": 60
+    },
+    "pingLeadMinutes": {
+      "type": "number",
+      "title": "Ping lead (minutes)",
+      "description": "While keep-warm is on, ping this many minutes before the cache would go cold.",
+      "default": 5
+    },
+    "warnMinutes": {
+      "type": "number",
+      "title": "Warn at (minutes left)",
+      "description": "Show a toast when the cache has this many minutes left and keep-warm is off. 0 turns the warning off.",
+      "default": 5
+    },
+    "keepWarmMaxHours": {
+      "type": "number",
+      "title": "Keep-warm limit (hours)",
+      "description": "Keep-warm switches itself off after this long, so a forgotten session doesn't ping forever.",
+      "default": 4
+    },
+    "stopWhenBack": {
+      "type": "boolean",
+      "title": "Stop keep-warm when you're back",
+      "description": "Switch keep-warm off as soon as you send your next message.",
+      "default": true
+    }
+  }
+}

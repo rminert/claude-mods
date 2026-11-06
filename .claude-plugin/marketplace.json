@@ -1,0 +1,14 @@
+{
+  "name": "claude-mods",
+  "owner": {
+    "name": "Ryan Minert"
+  },
+  "description": "Ryan Minert's mods for Claude Code: small plugins that change its interface or behaviour.",
+  "plugins": [
+    {
+      "name": "cache-countdown",
+      "source": "./mods/cache-countdown",
+      "description": "Counts down until the session's prompt cache goes cold, keeps it warm while you're away, and writes a handoff prompt for a fresh session."
+    }
+  ]
+}
